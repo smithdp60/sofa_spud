@@ -1,0 +1,47 @@
+<% include ../partials/header %>
+
+<%  var rating = parseInt(Math.round((imdbRating))) %>
+
+<div class="container">
+  <div class="" id="item">
+    <img id="poster" src="<%=Poster%>">
+
+    <div id="info">
+        <h3><%= Title %> <small>(<%= Year %>)</small></h3>
+
+        <form class="addForm" method="post" action="/favorites/<%= imdbID %>">
+            <input type="hidden" name="imdbID" value="<%= imdbID %>">
+            <input type="hidden" name="Title" value="<%= Title %>">
+            <input type="hidden" name="Year" value="<%= Year %>">
+            <input type="hidden" name="Poster" value="<%= Poster %>">
+
+            <button type="hidden" id="favoriteButton" class="favoriteButton btn btn-default btn-lg <%= fave ? ' hidden' : '' %>" value=<%= "/movies/" + imdbID %>>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" id="plus"></span>&nbsp; Add to watch list
+            </button>
+
+            <button type="hidden" id="removeButton" class="removeButton btn btn-default btn-lg <%= fave ? '' : ' hidden' %>" value=<%= "/favorites/" + imdbID %>>
+                <span class="glyphicon glyphicon-remove" aria-hidden="true" id="plus"></span>&nbsp; Remove from watch list
+            </button>
+
+        </form>
+        <h5><% for (var i = 0; i < rating; i += 1) { %>
+            <span id="gold"> &#9733; </span>
+            <%  } %>
+            <% for (var i = 0; i < 10-rating; i += 1) { %>
+            <span id="gray"> &#9734; </span>
+            <%  } %></h5>
+            <p><strong>Rating</strong>: <%= rating %> / 10 stars</p>
+            <p><strong>Genre(s)</strong>: <%= Genre %></p>
+            <p><strong>Rated</strong>: <%= Rated %></p>
+            <p><strong>Released</strong>: <%= Released %></p>
+            <p><strong>Length</strong>: <%= Runtime %></p>
+            <p><strong>Director</strong>: <%= Director %></p>
+            <p><strong>Writer(s)</strong>: <%= Writer %></p>
+            <p><strong>Cast</strong>: <%= Actors %></p>
+            <p><strong>Summary</strong>: <%= Plot %></p>
+            <p><strong>Awards</strong>: <%= Awards %></p>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

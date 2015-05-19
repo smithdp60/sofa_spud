@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SOFASPUD MOVIE DB</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <link href='http://fonts.googleapis.com/css?family=Cabin:400,600' rel='stylesheet' type='text/css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript"
+   src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+  <script src="/js/script.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse text-center" id="header">
+    <a href="http://localhost:3000/"><h1>sofaspud <small>MOVIE DB</small></h1></a>
+
+
+    <div id="search">
+      <form class="form form-inline" action="/movies" method="get">
+        <div class="form-group">
+          <input type="text" name="q" class="form-control" placeholder="Search for a movie" id="searchBar">
+        </div>
+        <input type="submit" value="Search" class="btn btn-primary">
+      </form>
+    </div>
+
+    <a href="/favorites/"><button type="button" class="btn btn-default btn-lg" id="viewButton">
+      <span class="glyphicon glyphicon-eye-open" aria-hidden="true" id="eye"></span>&nbsp; View watch list
+    </button></a>
+
+  </nav>
+</div>

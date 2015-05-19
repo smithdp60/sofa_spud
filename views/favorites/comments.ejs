@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <div id="comment-container">
+
+    <h2 id="commentTitle"> <%= returnedMovie.title %> </h2>
+
+    <div id="commentList">
+      <% for (i = 0; i < returnedComments.length; i += 1) { %>
+
+
+      <div id="commentItem">
+
+        <button href="<%= "/favorites/" + returnedMovie.id + "/comments/" + returnedComments[i].id %>" class="removeComment btn btn-default btn-lg">
+
+          <span class="glyphicon glyphicon-remove" aria-hidden="true" id="plus"></span>
+
+        </button>
+
+        <h2><%= returnedComments[i].comment %></h2></div>
+
+        <% } %>
+      </div>
+
+
+      <div id="commentForm">
+        <form action=<%= "/favorites/" + returnedMovie.id + "/comments"%> method="post" class="commentForm">
+
+          <input id="faveInput" type="text" name="comment" class="form-control" placeholder="Enter a comment"><input id="faveSubmit" type="submit" value="Comment" class="btn btn-primary">
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <% include ../partials/footer %>
