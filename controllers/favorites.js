@@ -48,6 +48,7 @@ router.delete('/:imdbID', function(req,res){
   });
 });
 
+//ADD FAVORITE
 router.post("/:imdbID", function(req,res) {
   db.favorites.findOrCreate({where: {imdbId: req.body.imdbID, title: req.body.Title, year: req.body.Year, poster: req.body.Poster}}).spread(function(data, created) {
     data.save().then(function(data) {

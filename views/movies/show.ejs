@@ -4,7 +4,8 @@
 
 <div class="container">
   <div class="" id="item">
-    <img id="poster" src="<%=Poster%>">
+
+    <img id="poster" src="<%= Poster.slice(0,-7) + ".jpg" %>">
 
     <div id="info">
         <h3><%= Title %> <small>(<%= Year %>)</small></h3>
@@ -13,7 +14,7 @@
             <input type="hidden" name="imdbID" value="<%= imdbID %>">
             <input type="hidden" name="Title" value="<%= Title %>">
             <input type="hidden" name="Year" value="<%= Year %>">
-            <input type="hidden" name="Poster" value="<%= Poster %>">
+            <input type="hidden" name="Poster" value="<%= Poster.slice(0,-7) + ".jpg" %>">
 
             <button type="hidden" id="favoriteButton" class="favoriteButton btn btn-default btn-lg <%= fave ? ' hidden' : '' %>" value=<%= "/movies/" + imdbID %>>
                 <span class="glyphicon glyphicon-plus" aria-hidden="true" id="plus"></span>&nbsp; Add to watch list
