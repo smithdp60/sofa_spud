@@ -8,7 +8,7 @@
     <div class="faves">
 
       <a href=<%= "/movies/" + faves[i].imdbId %>>
-        <img id="favesPic" src=<%= faves[i].poster %>>
+        <img id="favesPic" src="<%= faves[i].poster %>">
 
         <button type="hidden" class="removeButton xButton btn btn-default btn-lg" value=<%= "/favorites/" + faves[i].imdbId %>>
           <span class="glyphicon glyphicon-remove" aria-hidden="true" id="plus"></span>
